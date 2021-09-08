@@ -1,0 +1,89 @@
+---
+title: "Some Git/GitHub Basics"
+
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(flair)
+library(palmerpenguins)
+```
+
+```{r xaringan-themer, include=FALSE}
+library(xaringanthemer)
+style_duo(
+  primary_color = "#26116c",
+  secondary_color = "#fd5e53",
+  title_slide_text_color = "#fff8e7",
+  header_font_google = google_font("Roboto"),
+  text_font_google   = google_font("Roboto Condensed"),
+  code_font_google   = google_font("Droid Mono")
+)
+```
+
+# The Basics of Git/GitHub
+
+* This is actually a pretty advanced system that's super awesome, but...
+
+--
+
+* You can get **REALLY** far on relatively little!
+
+* What have we done so far:
+
+--
+
+1. Created a new repo.
+2. **Cloned** a repo to our personal machine.
+3. **Committed** and **pushed** local changes to our GitHub repo
+
+Let's define these terms and a couple others...
+
+
+---
+
+# Basic Git Terms
+
+1. **Clone**: A clone is a copy of a repository or the action of copying a repository. Often we will clone a repository on GitHub to our personal machine.
+
+2. **Fork**: Creates a copy of a repository. Often we will fork someone else's GitHub repository to create our own GitHub copy of it.
+
+3. **Pull**: If someone has changed code on a separate branch of a project and wants it to be reviewed to add to the master branch, that someone can put in a pull request. A **pull** happens when adding the changes to the master branch. **You should very often start your work sessions off by pulling your repo contents to make sure you're working with the most up-to-date files**.
+
+4. **Commit**: A commit functions like a snapshot of all the files in the repo, at a specific moment (under the hood, things work a little differently though). Every time you make a commit you must also write a short **commit message**. You should generally be committing often so that these messages are short and specific to a single change (or very small amounts of changes).
+
+5. **Push**: Update a remote branch with the commits made to the current branch. You're literally "pushing" changes onto the remote (GitHub usually) repository. A push can contain multiple commits. So, commit often, but push only usually a couple times per day (maybe even once).
+
+---
+
+# Activity: Create Your Own Copy of the Workshop Repo
+
+1. Fork my repository for the workshop materials: [https://github.com/hglanz/GitHubInR_2021](https://github.com/hglanz/GitHubInR_2021)
+
+2. Navigate to your own GitHub repository which is the copy of this repo.
+
+3. Click the green "Code" button to clone the repo, but this time select "Download ZIP".
+
+4. Extract/unzip the download to your desktop and open the R project file within (GitHubInR_2021.Rproj)
+
+5. Within RStudio, make a change to the README: "This is my copy of the workshop materials!"
+
+6. Save your changes, commit the changes, and then push the changes.
+
+7. Verify your changes made it to your GitHub repo.
+
+--
+
+.center[
+**What happened? What did we just do?!**
+]

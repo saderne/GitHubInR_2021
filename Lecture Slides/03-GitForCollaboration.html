@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Git for Collaboration</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Git for Collaboration
+
+---
+
+
+
+
+
+
+class: center, middle, inverse
+
+# Are We Collaborating Yet?!
+
+---
+
+# GitHub and Repo Workflow
+
+1. Sit down at your computer with your favorite beverage.
+2. Open the R Project file of the project you're about to work on.
+3. Pull from the GitHub repo of the project you're about to work on.
+3. Work...Commit...Work...Commit...
+4. Push.
+5. Work...Commit...Work...Commit...
+6. Push.
+7. Repeat more?
+8. Give yourself a gold star and call it a day!
+
+--
+
+.center[
+**So far this has been applied to and worked well for your OWN (solo) repo**
+]
+
+---
+
+## Forking and Pull-Requesting is Not Necessarily What You Want
+
+* Collaboration could take place by you forking the project repo; making changes to your own repo; pull-requesting the original/master repo in an attempt to merge your changes in.
+
+--
+
+* This can be good if you have "lots" of contributors or want tight control of work and changes.
+
+--
+
+* I have a lot of projects and teammates that I just trust, and so want us all to have master-push authority.
+
+So...
+
+--
+
+1. Navigate back to your first repo of the workshop on GitHub.
+2. Click the "Settings" tab at the top of the repo.
+3. Click "Manage Access" on the left.
+4. Let's talk about **GitHub collaborators** and some of the other GitHub bells and whistles!
+
+---
+
+# Activity: Working Together on a Repo
+
+1. Put your GitHub username in the chat (or direct message me with it)
+2. I am going to invite you to be a collaborator on the GitHubInR_2021_TeamRepo repo [https://github.com/hglanz/GitHubInR_2021_TeamRepo](https://github.com/hglanz/GitHubInR_2021_TeamRepo)
+3. Accept the invitation.
+4. Navigate to the repo page on GitHub and clone the repo to your personal machine using the ZIP approach as before.
+5. Open the R Project file.
+6. Create a new text document whose file name is your favorite movie followed by your age.
+7. This file should contain a single line of text, your favorite quote in that movie.
+8. Save that file.
+9. Commit and push your changes.
+10. Let's see everyone's files on the GitHub repo!
+
+---
+
+# GitHub Desktop
+
+* RStudio has a wonderful interface for all of this Git stuff, but these two tools don't have to be linked!
+
+* GitHub Desktop is a fantastic, light-weight application that also faciliates your Git and GitHub workflow (you can also use the command line for everything, if you prefer).
+
+.center[
+**GitHub Desktop Demo**
+]
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

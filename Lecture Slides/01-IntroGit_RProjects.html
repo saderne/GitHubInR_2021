@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to RStudio, R Projects, and Git/GitHub</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to RStudio, R Projects, and Git/GitHub
+
+---
+
+
+
+
+
+
+## R (and maybe a lot of your work) is Open Source
+
+Being a good open-source citizen means...
+
+--
+
+... **sharing** your code publicly when possible. 
+
+(we're learning about **GitHub**!)
+
+--
+
+... **contributing** to public projects and packages, as you are able.
+
+--
+
+... creating your own **packages**, if you can.
+
+--
+
+... using **R** for **ethical and respectful** projects.
+
+---
+
+class: center, middle, inverse
+
+# Intro to RStudio
+
+---
+# What is RStudio?
+
+**RStudio** is an IDE (*Integrated Developer Environment*).
+
+This means it is an application that makes it easier for you to interact with **R**.
+
+--
+
+![](https://d33wubrfki0l68.cloudfront.net/0b4d0569b2ddf6147da90b110fbb2a17653c8b08/f06f3/images/shutterstock/r_vs_rstudio_1.png)
+
+---
+
+# If We Have Time Later...
+
+- RStudio has more bells and whistles than Whoville at Christmas!
+
+&lt;img src="F:/Dropbox/Hunter/FlashDrive-64GB/CalPoly-prof/Workshops/Villanova_GithubInR2021/GitHubInR_2021/Lecture Slides/Images/whoville.jpg" width="50%" height="50%" style="display: block; margin: auto;" /&gt;
+
+---
+# History of RStudio
+
+**RStudio** was released in 2011 by J.J. Allaire.
+
+--
+
+In 2014, RStudio hired *Hadley Wickham* as Chief Data Scientist.  They now employ around 20 full-time developers.
+
+--
+
+Recall: You can __not__ sell __R__ code; packages created by RStudio's team are freely available.  
+
+They make money off the IDE and other helper software.
+
+--
+
+In 2020, RStudio became a PBC (*Public Benefit Corp*), meaning they are legally obligated to support education and open-source development.
+
+---
+
+![](https://datacarpentry.org/genomics-r-intro/fig/rstudio_session_4pane_layout.png)
+
+
+---
+
+## Principles of Reproducibility
+
+The idea:  You should be able to send your project to someone else, and they can jump in and start working right away.
+
+1. Files are organized and well-named.
+
+2. References to data and code work for everyone.
+
+3. Package dependency is clear.
+
+4. Code will run the same every time, even if data values change.
+
+5. Analysis process is well-explained and easy to read.
+
+
+
+---
+# Dealing with Directories
+
+
+- Your **working directory** is the folder that R "thinks" it lives in at the moment.
+
+
+```r
+getwd()
+```
+
+```
+## [1] "F:/Dropbox/Hunter/FlashDrive-64GB/CalPoly-prof/Workshops/Villanova_GithubInR2021/GitHubInR_2021"
+```
+
+- If you save things you have created, they save to your working directory by default.
+
+- In RStudio you can see your current working directory at the top of the Console window
+
+
+---
+
+## The beauty of R Projects
+
+An **R Project** is basically a "flag" planted in a certain directory.
+
+When you double click a **.Rproj** file, it does two things:
+
+1. Open RStudio
+
+2. Set the working directory to be wherever the .Rproj file lives.
+
+3. Link to GitHub, if setup -- we'll get to this shortly!
+
+--
+This is great for reproducibility!  
+
+Anyone can copy your directory, and the .Rproj will open properly on their computer.
+
+---
+class: center, middle
+
+# Set up your RProj
+
+In RStudio, choose `File &gt; New Project`.
+
+(Save any files you need to.)
+
+Choose **new directory** and create a new folder.
+
+--
+
+Close **all** of your RStudio windows.
+
+Go to your new folder.
+
+Double click the **.Rproj** file (it looks like a cube!)
+
+--
+
+**You should ALWAYS access your work this way from now on!**
+
+---
+# Bad practice
+
+If you put something like this at the top of your .Rmd file, that is not great:
+
+
+```r
+setwd("/User/hglanz/Dropbox/Teaching/Workshop/Data/")
+```
+
+- Setting working directory by hand = BAD!  
+
+--
+
+- That directory is specific to you!  Where should someone else look for the data?
+
+--
+
+- Markdown files won't knit this code.
+
+---
+
+# Why Git?
+
+.center[
+**Git** is a *version control system whose original purpose was to help groups of developers work collaboratively on big software projects.
+]
+
+--
+
+- Git manages the evolution of a set of files (**repository** or **repo**) in a sane, highly structured way... think of it as the "Track Changes" features from Microsoft Word on steroids!
+
+- Data science (and related) folk have re-purposed Git to help manage all sorts of different project files.
+
+--
+
+- Probably the biggest gain from using Git is the degree to which it eases and streamlines the communication and collaboration with other people on a project.
+
+- I still use it for solo things, but it's probably a little less beneficial.
+
+---
+
+# Why GitHub?
+
+.center[
+**GitHub** is a hosting service that provides a home for your Git-based projects on the internet (like Dropbox, but better in some ways)
+]
+
+--
+
+- Acts like a distribution channel or clearinghouse for your Git-managed project.
+
+- Allows other people to see your stuff, sync up with you, and perhaps make changes.
+
+- Tons of benefits for academic users!
+
+---
+
+# Some Payoffs of Using GitHub
+
+1. **Exposure**: If someone needs to see your work or if you want them to try out your code, they can easily get it from GitHub.
+
+--
+
+2. **Keen Monitoring**: If you care deeply about someone else's project, you can track its development on Github, get notified of major activity, create your own copy, and even suggest changes.
+
+--
+
+3. **Collaboration**: Google doc-esque workflow over the edit-save-attach workflow of the past.
+
+---
+
+# What's Special About GitHub?
+
+To name a few...
+
+--
+
+- **Issues**: a well-organized list of things attached to each repo (bugs, feature requests, to-dos, whatever).
+
+1. Tightly integrated with email.
+2. Can be **assigned** to people and **tagged**.
+3. Tightly integrated with commits (more on this later!)
+
+--
+
+- **Pull Requests**: Git allows a project to have multiple, independent branches of development, with the notion that some should eventually be merged back into the main development branch.
+
+1. A pull request is a formal proposal that says, "Here are some changes I would like to make."
+
+---
+
+# Activity: New Project and Repo
+
+1. Got to [https://github.com](https://github.com) and make sure you are logged in.
+2. Click the green "New Repository" button.
+3. Specify your repository name (your choice). We're doing this multiple times today so feel free to make this temporary for this workshop.
+4. Make sure it's public.
+5. Make sure it will get initialized with a README
+6. Click the big green "Create Repository" button.
+7. Copy the HTTPS clone URL to your clipboard via the green "Clone or Download" button.
+
+--
+
+8. In RStudio: *File &gt; New Project &gt; Version Control &gt; Git*. In the "repository URL" field, paste the URL of your new GitHub repository.
+9. You will also need to specify where to create this project on your own machine. The desktop or anywhere is fine, but usually this location is somewhere very deliberate!
+10. Check the box to "Open in new session".
+11. Click "Create Project"
+
+--
+
+.center[
+**What happened and what did we just do?!**
+]
+
+---
+
+# Activity Continued: New Project and Repo
+
+Make local changes, save, and commit...
+
+12. From RStudio, modify the README.md file in some way. Save your changes.
+13. Click the "Git" tab in the upper right window.
+14. Check "Staged" box for any files whose existence or modifications you want to commit.
+15. Click "Commit".
+16. Type a message in the "Commit Message" field, usually something short but informative about the changes.
+17. Click "Commit".
+
+--
+
+18. Click the green "Push" button to send your local changes to GitHub.
+19. Feel free to close out of the extra RStudio windows.
+20. Check your GitHub repo for the changes!
+
+--
+
+.center[
+**What happened and what did we just do?!**
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightLines": true,
+"highlightStyle": "github",
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

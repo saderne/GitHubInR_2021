@@ -1,0 +1,109 @@
+---
+title: "Git for Collaboration"
+
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(flair)
+library(ISLR)
+library(janitor)
+```
+
+```{r xaringan-themer, include=FALSE}
+library(xaringanthemer)
+style_duo(
+  primary_color = "#26116c",
+  secondary_color = "#fd5e53",
+  title_slide_text_color = "#fff8e7",
+  header_font_google = google_font("Roboto"),
+  text_font_google   = google_font("Roboto Condensed"),
+  code_font_google   = google_font("Droid Mono")
+)
+```
+
+class: center, middle, inverse
+
+# Are We Collaborating Yet?!
+
+---
+
+# GitHub and Repo Workflow
+
+1. Sit down at your computer with your favorite beverage.
+2. Open the R Project file of the project you're about to work on.
+3. Pull from the GitHub repo of the project you're about to work on.
+3. Work...Commit...Work...Commit...
+4. Push.
+5. Work...Commit...Work...Commit...
+6. Push.
+7. Repeat more?
+8. Give yourself a gold star and call it a day!
+
+--
+
+.center[
+**So far this has been applied to and worked well for your OWN (solo) repo**
+]
+
+---
+
+## Forking and Pull-Requesting is Not Necessarily What You Want
+
+* Collaboration could take place by you forking the project repo; making changes to your own repo; pull-requesting the original/master repo in an attempt to merge your changes in.
+
+--
+
+* This can be good if you have "lots" of contributors or want tight control of work and changes.
+
+--
+
+* I have a lot of projects and teammates that I just trust, and so want us all to have master-push authority.
+
+So...
+
+--
+
+1. Navigate back to your first repo of the workshop on GitHub.
+2. Click the "Settings" tab at the top of the repo.
+3. Click "Manage Access" on the left.
+4. Let's talk about **GitHub collaborators** and some of the other GitHub bells and whistles!
+
+---
+
+# Activity: Working Together on a Repo
+
+1. Put your GitHub username in the chat (or direct message me with it)
+2. I am going to invite you to be a collaborator on the GitHubInR_2021_TeamRepo repo [https://github.com/hglanz/GitHubInR_2021_TeamRepo](https://github.com/hglanz/GitHubInR_2021_TeamRepo)
+3. Accept the invitation.
+4. Navigate to the repo page on GitHub and clone the repo to your personal machine using the ZIP approach as before.
+5. Open the R Project file.
+6. Create a new text document whose file name is your favorite movie followed by your age.
+7. This file should contain a single line of text, your favorite quote in that movie.
+8. Save that file.
+9. Commit and push your changes.
+10. Let's see everyone's files on the GitHub repo!
+
+---
+
+# GitHub Desktop
+
+* RStudio has a wonderful interface for all of this Git stuff, but these two tools don't have to be linked!
+
+* GitHub Desktop is a fantastic, light-weight application that also faciliates your Git and GitHub workflow (you can also use the command line for everything, if you prefer).
+
+.center[
+**GitHub Desktop Demo**
+]
+
+
